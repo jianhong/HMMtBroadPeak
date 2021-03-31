@@ -1,0 +1,93 @@
+---
+title: "HMMtBroadPeak Guide"
+author: "Jianhong Ou"
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+package: "`r packageVersion('HMMtBroadPeak')`"
+bibliography: bibliography.bib
+csl: nature.csl
+vignette: >
+    %\VignetteIndexEntry{HMMtBroadPeak Vignette}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+output:
+  html_document:
+    theme: simplex
+    toc: true
+    toc_float: true
+    toc_depth: 4
+---
+
+```{r, echo=FALSE, results="hide", warning=FALSE}
+suppressPackageStartupMessages({
+  library(HMMtBroadPeak)
+  library(rtracklayer)
+  library(ggplot2)
+})
+knitr::opts_chunk$set(warning=FALSE, message=FALSE, eval=TRUE)
+```
+
+# Introduction
+
+The HMMtBroadPeak package is designed to call very broad peaks for data
+such as lamina-associated domains (LADs), 
+nucleolus-associated domains (NADs), or other topologically associating 
+domains.
+
+The methods is following the description of Christ et.al[@LEEMANS2019852].
+Reads will be count by each bins. Only bins with at least given reads
+(defined by background parameter) for all samples (pool all reads for 
+each bin) will be subsequently normalized. These bins will be first 
+normalized to CPM (count per million) reads and then do log2 transform
+for the ratio over control with a pseudocount. 
+The peaks were defined by running a hidden markov model over the 
+normalized values (using the R-package HMMt).
+
+## Quick start
+
+There are three steps for calling peaks:
+
+### Step1: prepare the bam files.
+
+The bam files should be clean with reads passed quality control and
+proper paired (if applicable). The index file of bam should be stored
+in the same folder and with same prefix.
+
+```{r}
+treatment <- system.file("extdata", "LB1.KD.chr1_1_5000000.bam",
+                         package = "HMMtBroadPeak",
+                         mustWork = TRUE)
+control   <- system.file("extdata", "LB1.WT.chr1_1_5000000.bam",
+                         package = "HMMtBroadPeak",
+                         mustWork = TRUE)
+## For local file, please try
+# treatment <- "path/to/treatment/bam/files"
+# control <- "path/to/control/bam/files"
+```
+
+### Step2: calling peaks.
+
+The reads counts for treatment and control will be pool for each group. 
+That is to say duplicates will not be considered when we call peaks.
+
+```{r}
+library(HMMtBroadPeak)
+called <- HMMtBroadPeak(treatment, control)
+called$peaks
+```
+
+### Step3: validate the calling and export peaks
+
+```{r}
+library(ggplot2)
+plotPeaks(called, seqname="chr1") + theme_bw()
+library(rtracklayer)
+export(called$peaks, "called.broad.peak.bed")
+```
+
+
+# Session Info
+```{r sessionInfo}
+sessionInfo()
+```
+
+# References
