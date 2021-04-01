@@ -102,10 +102,15 @@ HMMtBroadPeak <- function(treatment, control, binSize=5e3,
   rr$log2signal[!rr$filter] <- 0
   rr <- split(rr, seqnames(rr))
   hmmt <- lapply(rr, function(.ele){
-    BaumWelchT(.ele$log2signal, m=2, ...)
+    tryCatch(
+      BaumWelchT(.ele$log2signal, m=2, ...)@ViterbiPath,
+      error = function(e){
+        rep(1, length(.ele))
+      }
+    )
   })
   rr <- mapply(function(.rr, .hmmt){
-    .rr$ViterbiPath <- .hmmt@ViterbiPath
+    .rr$ViterbiPath <- .hmmt
     .rr
   }, rr, hmmt)
   rr <- unlist(GRangesList(rr))

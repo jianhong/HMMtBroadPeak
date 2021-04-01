@@ -1,6 +1,6 @@
 Package: HMMtBroadPeak
 Type: Package
-Version: 0.0.3
+Version: 0.0.4
 Title: call broad peak by Hidden Markov Models with t emissions
 Authors@R: c(person(given="Jianhong", family="Ou", email="jianhong.ou@duke.edu", 
         role=c("aut", "cre"), comment=c(ORCID="0000-0002-8652-2488")))
