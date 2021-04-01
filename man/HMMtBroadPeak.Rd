@@ -49,6 +49,9 @@ normalized values (using the R-package HMMt).
 treatment <- system.file("extdata", "LB1.KD.chr1_1_5000000.bam",
                           package = "HMMtBroadPeak",
                           mustWork = TRUE)
+## call peak without control
+res <- HMMtBroadPeak(treatment)
+## call peak with control
 control   <- system.file("extdata", "LB1.WT.chr1_1_5000000.bam",
                           package = "HMMtBroadPeak",
                           mustWork = TRUE)

@@ -31,6 +31,9 @@
 #' treatment <- system.file("extdata", "LB1.KD.chr1_1_5000000.bam",
 #'                           package = "HMMtBroadPeak",
 #'                           mustWork = TRUE)
+#' ## call peak without control
+#' res <- HMMtBroadPeak(treatment)
+#' ## call peak with control
 #' control   <- system.file("extdata", "LB1.WT.chr1_1_5000000.bam",
 #'                           package = "HMMtBroadPeak",
 #'                           mustWork = TRUE)
@@ -42,15 +45,19 @@ HMMtBroadPeak <- function(treatment, control, binSize=5e3,
                           background=10, pseudocount=1, 
                           gapwidth=binSize,
                           ...){
-  if(missing(treatment) || missing(control)){
-    stop("treatment/control is required")
+  if(missing(treatment)){
+    stop("treatment is required")
   }
   args <- list(...)
   if("m" %in% names(args)){
     stop("The number of states is fixed to 2. Please remove the m parameter.")
   }
   ## check header are identical
-  seqlen <- check_identical_header(c(treatment, control))
+  if(!missing(control)){
+    seqlen <- check_identical_header(c(treatment, control))
+  }else{
+    seqlen <- check_identical_header(treatment)
+  }
   ## create tileGenome
   rr <- tileGenome(seqlengths = seqlen, tilewidth = binSize)
   rr <- unlist(rr)
@@ -59,27 +66,43 @@ HMMtBroadPeak <- function(treatment, control, binSize=5e3,
                                        reads = treatment,
                                        mode = count_by_overlap,
                                        ignore.strand=TRUE)
-    reads_control <- summarizeOverlaps(features = rr,
-                                       reads = control,
-                                       mode = count_by_overlap,
-                                       ignore.strand=TRUE)
+    if(!missing(control)){
+      reads_control <- summarizeOverlaps(features = rr,
+                                         reads = control,
+                                         mode = count_by_overlap,
+                                         ignore.strand=TRUE)
+    }
   })
-  if(!identical(rr, rowRanges(reads_treatment)) || 
-     !identical(rr, rowRanges(reads_control))){
-    stop("unexpect event happened.")
+  if(!missing(control)){
+    if(!identical(rr, rowRanges(reads_treatment)) || 
+       !identical(rr, rowRanges(reads_control))){
+      stop("unexpect event happened.")
+    }
+  }else{
+    if(!identical(rr, rowRanges(reads_treatment))){
+      stop("unexpect event happened.")
+    }
   }
   counts_treatment <- rowSums(assays(reads_treatment)$counts)
-  counts_control <- rowSums(assays(reads_control)$counts)
-  mcols(rr) <- DataFrame(treatment = counts_treatment,
-                         control = counts_control)
+  if(!missing(control)){
+    counts_control <- rowSums(assays(reads_control)$counts)
+    mcols(rr) <- DataFrame(treatment = counts_treatment,
+                           control = counts_control)
+  }else{
+    mcols(rr) <- DataFrame(treatment = counts_treatment)
+  }
   rr$filter <- rowSums(as.data.frame(mcols(rr)))>=background
   rr$treatment <- log2((rr$treatment*1e6/sum(rr$treatment))+pseudocount)
-  rr$control <- log2((rr$control*1e6/sum(rr$control))+pseudocount)
-  rr$log2ratio <- rr$treatment - rr$control
-  rr$log2ratio[!rr$filter] <- 0
+  if(!missing(control)){
+    rr$control <- log2((rr$control*1e6/sum(rr$control))+pseudocount)
+    rr$log2signal <- rr$treatment - rr$control
+  }else{
+    rr$log2signal <- rr$treatment
+  }
+  rr$log2signal[!rr$filter] <- 0
   rr <- split(rr, seqnames(rr))
   hmmt <- lapply(rr, function(.ele){
-    BaumWelchT(.ele$log2ratio, m=2, ...)
+    BaumWelchT(.ele$log2signal, m=2, ...)
   })
   rr <- mapply(function(.rr, .hmmt){
     .rr$ViterbiPath <- .hmmt@ViterbiPath

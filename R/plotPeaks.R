@@ -1,6 +1,6 @@
 #' Plot tool for called peaks
 #' 
-#' Plot the log2ratio signal along a given chromosome with the peaks.
+#' Plot the log2 transformed signal along a given chromosome with the peaks.
 #' 
 #' @param res output of \link{HMMtBroadPeak}.
 #' @param seqname the chromosome to plot.
@@ -18,7 +18,7 @@ plotPeaks <- function(res, seqname){
   stopifnot(length(seqname)==1)
   stopifnot("seqname is not shown in counts table." = 
               seqname %in% seqlevels(res$counts))
-  cvg <- coverage(res$counts, weight = res$counts$log2ratio)
+  cvg <- coverage(res$counts, weight = res$counts$log2signal)
   peak <- coverage(res$peaks)
   cvg <- cvg[[seqname]]
   peak <- peak[[seqname]]
@@ -26,10 +26,10 @@ plotPeaks <- function(res, seqname){
     rbind(data.frame(
             x=cumsum(c(1, runLength(cvg)))[-(length(runLength(cvg))+1)],
             value = runValue(cvg),
-            data = "log2ratio"),
+            data = "log2signal"),
           data.frame(x=cumsum(runLength(cvg)),
                      value = runValue(cvg),
-                     data = "log2ratio"),
+                     data = "log2signal"),
           data.frame(
             x=cumsum(c(1, runLength(peak)))[-(length(runLength(peak))+1)],
             value = runValue(peak)*

@@ -15,5 +15,5 @@ plotPeaks(res, seqname)
 an ggplot object
 }
 \description{
-Plot the log2ratio signal along a given chromosome with the peaks.
+Plot the log2 transformed signal along a given chromosome with the peaks.
 }
