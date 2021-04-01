@@ -105,6 +105,7 @@ HMMtBroadPeak <- function(treatment, control, binSize=5e3,
     tryCatch(
       BaumWelchT(.ele$log2signal, m=2, ...)@ViterbiPath,
       error = function(e){
+        warning("Error in", as.character(seqnames(.ele[1])), "\n", e)
         rep(1, length(.ele))
       }
     )
