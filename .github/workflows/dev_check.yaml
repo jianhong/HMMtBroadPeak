@@ -7,11 +7,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: bioconductor/bioconductor_docker:devel
-    steps:
+    steps:  
+      - name: Merge main -> merge
+        uses: devmasx/merge-branch@v1.3.1
+        with:
+          type: now
+          from_branch: main
+          target_branch: merge
+          github_token: ${{ github.token }}
+      
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          path: main
       
       - name: Query dependencies
         run: |
