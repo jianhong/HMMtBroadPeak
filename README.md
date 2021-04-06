@@ -1,3 +1,3 @@
-# Copy the main to staging branch
+# Create the gh-pages
 
-This branch is used to copy main branch to staging branch and triger the github actions.
+This branch is used to create a ghp-pages branch from main branch.
