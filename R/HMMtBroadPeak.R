@@ -100,6 +100,7 @@ HMMtBroadPeak <- function(treatment, control, binSize=5e3,
     rr$log2signal <- rr$treatment
   }
   rr$log2signal[!rr$filter] <- 0
+  rr$log2signal[rr$log2signal<0] <- 0
   rr <- split(rr, seqnames(rr))
   hmmt <- lapply(rr, function(.ele){
     tryCatch(
