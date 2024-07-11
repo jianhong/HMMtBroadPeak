@@ -20,5 +20,5 @@ Lazyload: yes
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
 Encoding: UTF-8
-BugReports: https://github.com/jianhong/HMMtBroadPeakissues
+BugReports: https://github.com/jianhong/HMMtBroadPeak/issues
 URL: https://github.com/jianhong/HMMtBroadPeak
