@@ -6,19 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HMMtBroadPeak Guide • HMMtBroadPeak</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="HMMtBroadPeak Guide">
-<meta property="og:description" content="HMMtBroadPeak">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +32,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">HMMtBroadPeak</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.5</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="../articles/HMMtBroadPeak.html">Get started</a>
 </li>
@@ -52,9 +47,9 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/jianhong/HMMtBroadPeakissues/">
+  <a href="https://github.com/jianhong/HMMtBroadPeak/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -65,194 +60,169 @@
 </div>
 <!--/.navbar -->
 
-      
 
-      </header><script src="HMMtBroadPeak_files/header-attrs-2.7/header-attrs.js"></script><div class="row">
+
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>HMMtBroadPeak Guide</h1>
-                        <h4 class="author">Jianhong Ou</h4>
+                        <h4 data-toc-skip class="author">Jianhong
+Ou</h4>
             
-            <h4 class="date">2021-04-06</h4>
+            <h4 data-toc-skip class="date">2024-07-16</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/jianhong/HMMtBroadPeakissues/blob/master/vignettes/HMMtBroadPeak.Rmd"><code>vignettes/HMMtBroadPeak.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/jianhong/HMMtBroadPeak/blob/staging/vignettes/HMMtBroadPeak.Rmd" class="external-link"><code>vignettes/HMMtBroadPeak.Rmd</code></a></small>
       <div class="hidden name"><code>HMMtBroadPeak.Rmd</code></div>
 
     </div>
 
     
     
-<div id="introduction" class="section level1">
-<h1 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>The HMMtBroadPeak package is designed to call very broad peaks for data such as lamina-associated domains (LADs), nucleolus-associated domains (NADs), or other topologically associating domains.</p>
-<p>The methods is following the description of Christ et.al<span class="citation"><sup>1</sup></span>. Reads will be count by each bins. Only bins with at least given reads (defined by background parameter) for all samples (pool all reads for each bin) will be subsequently normalized. These bins will be first normalized to CPM (count per million) reads and then do log2 transform for the ratio over control with a pseudocount. The peaks were defined by running a hidden markov model over the normalized values (using the R-package HMMt).</p>
-<div id="quick-start" class="section level2">
-<h2 class="hasAnchor">
-<a href="#quick-start" class="anchor"></a>Quick start</h2>
+<div class="section level2">
+<h2 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h2>
+<p>The HMMtBroadPeak package is designed to call very broad peaks for
+data such as lamina-associated domains (LADs), nucleolus-associated
+domains (NADs), or other topologically associating domains.</p>
+<p>The methods is following the description of Christ et.al<span class="citation"><sup>1</sup></span>. Reads will be count by each bins.
+Only bins with at least given reads (defined by background parameter)
+for all samples (pool all reads for each bin) will be subsequently
+normalized. These bins will be first normalized to CPM (count per
+million) reads and then do log2 transform for the ratio over control
+with a pseudocount. The peaks were defined by running a hidden markov
+model over the normalized values (using the R-package HMMt).</p>
+<div class="section level3">
+<h3 id="quick-start">Quick start<a class="anchor" aria-label="anchor" href="#quick-start"></a>
+</h3>
 <p>There are three steps for calling peaks:</p>
-<div id="step1-prepare-the-bam-files-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#step1-prepare-the-bam-files-" class="anchor"></a>Step1: prepare the bam files.</h3>
-<p>The bam files should be clean with reads passed quality control and proper paired (if applicable). The index file of bam should be stored in the same folder and with same prefix.</p>
+<div class="section level4">
+<h4 id="step1-prepare-the-bam-files-">Step1: prepare the bam files.<a class="anchor" aria-label="anchor" href="#step1-prepare-the-bam-files-"></a>
+</h4>
+<p>The bam files should be clean with reads passed quality control and
+proper paired (if applicable). The index file of bam should be stored in
+the same folder and with same prefix.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">treatment</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"LB1.KD.chr1_1_5000000.bam"</span>,
-                         package <span class="op">=</span> <span class="st">"HMMtBroadPeak"</span>,
-                         mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="va">control</span>   <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"LB1.WT.chr1_1_5000000.bam"</span>,
-                         package <span class="op">=</span> <span class="st">"HMMtBroadPeak"</span>,
-                         mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="co">## For local file, please try</span>
-<span class="co"># treatment &lt;- "path/to/treatment/bam/files"</span>
-<span class="co"># control &lt;- "path/to/control/bam/files"</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">treatment</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"LB1.KD.chr1_1_5000000.bam"</span>,</span>
+<span>                         package <span class="op">=</span> <span class="st">"HMMtBroadPeak"</span>,</span>
+<span>                         mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">control</span>   <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"LB1.WT.chr1_1_5000000.bam"</span>,</span>
+<span>                         package <span class="op">=</span> <span class="st">"HMMtBroadPeak"</span>,</span>
+<span>                         mustWork <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">## For local file, please try</span></span>
+<span><span class="co"># treatment &lt;- "path/to/treatment/bam/files"</span></span>
+<span><span class="co"># control &lt;- "path/to/control/bam/files"</span></span></code></pre></div>
 </div>
-<div id="step2-calling-peaks-" class="section level3">
-<h3 class="hasAnchor">
-<a href="#step2-calling-peaks-" class="anchor"></a>Step2: calling peaks.</h3>
-<p>The reads counts for treatment and control will be pool for each group. That is to say duplicates will not be considered when we call peaks.</p>
+<div class="section level4">
+<h4 id="step2-calling-peaks-">Step2: calling peaks.<a class="anchor" aria-label="anchor" href="#step2-calling-peaks-"></a>
+</h4>
+<p>The reads counts for treatment and control will be pool for each
+group. That is to say duplicates will not be considered when we call
+peaks.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jianhong/HMMtBroadPeak">HMMtBroadPeak</a></span><span class="op">)</span>
-<span class="va">called</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/HMMtBroadPeak.html">HMMtBroadPeak</a></span><span class="op">(</span><span class="va">treatment</span>, <span class="va">control</span><span class="op">)</span></code></pre></div>
-<pre><code>## 
-iteration: 1
-iteration: 2
-iteration: 3
-iteration: 4
-iteration: 5
-iteration: 6
-iteration: 7
-iteration: 8
-iteration: 9
-iteration: 10
-iteration: 11
-iteration: 12
-iteration: 13
-iteration: 14
-iteration: 15
-iteration: 16
-iteration: 17
-iteration: 18
-iteration: 19
-iteration: 20
-iteration: 21
-iteration: 22
-iteration: 23
-iteration: 24
-iteration: 25
-iteration: 26
-iteration: 27
-iteration: 28
-iteration: 29
-iteration: 30
-iteration: 31
-iteration: 32
-iteration: 33
-iteration: 34
-iteration: 35
-iteration: 36
-iteration: 37
-iteration: 38
-iteration: 39
-iteration: 40
-iteration: 41
-iteration: 42
-iteration: 43
-iteration: 44
-iteration: 45
-iteration: 46
-iteration: 47
-iteration: 48
-iteration: 49
-iteration: 50
-iteration: 51
-iteration: 52
-iteration: 53</code></pre>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/jianhong/HMMtBroadPeak" class="external-link">HMMtBroadPeak</a></span><span class="op">)</span></span>
+<span><span class="va">called</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/HMMtBroadPeak.html">HMMtBroadPeak</a></span><span class="op">(</span><span class="va">treatment</span>, <span class="va">control</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## iteration: 1iteration: 2iteration: 3iteration: 4iteration: 5iteration: 6iteration: 7iteration: 8iteration: 9iteration: 10iteration: 11iteration: 12iteration: 13iteration: 14iteration: 15iteration: 16iteration: 17iteration: 18iteration: 19iteration: 20iteration: 21iteration: 22iteration: 23iteration: 24iteration: 25iteration: 26iteration: 27iteration: 28iteration: 29iteration: 30iteration: 31iteration: 32iteration: 33iteration: 34iteration: 35iteration: 36iteration: 37iteration: 38iteration: 39iteration: 40iteration: 41iteration: 42iteration: 43iteration: 44iteration: 45iteration: 46iteration: 47iteration: 48iteration: 49iteration: 50iteration: 51iteration: 52iteration: 53iteration: 54iteration: 55</span></span></code></pre>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">called</span><span class="op">$</span><span class="va">peaks</span></code></pre></div>
-<pre><code>## GRanges object with 3 ranges and 0 metadata columns:
-##       seqnames          ranges strand
-##          &lt;Rle&gt;       &lt;IRanges&gt;  &lt;Rle&gt;
-##   [1]     chr1  774227-1698303      *
-##   [2]     chr1 1713289-2657344      *
-##   [3]     chr1 2777225-5000001      *
-##   -------
-##   seqinfo: 1 sequence from an unspecified genome</code></pre>
+<code class="sourceCode R"><span><span class="va">called</span><span class="op">$</span><span class="va">peaks</span></span></code></pre></div>
+<pre><code><span><span class="co">## GRanges object with 9 ranges and 0 metadata columns:</span></span>
+<span><span class="co">##       seqnames          ranges strand</span></span>
+<span><span class="co">##          &lt;Rle&gt;       &lt;IRanges&gt;  &lt;Rle&gt;</span></span>
+<span><span class="co">##   [1]     chr1   499502-504496      *</span></span>
+<span><span class="co">##   [2]     chr1   594407-609391      *</span></span>
+<span><span class="co">##   [3]     chr1   624377-649351      *</span></span>
+<span><span class="co">##   [4]     chr1   664337-669331      *</span></span>
+<span><span class="co">##   [5]     chr1   709292-719281      *</span></span>
+<span><span class="co">##   [6]     chr1   729272-734266      *</span></span>
+<span><span class="co">##   [7]     chr1  754247-2662339      *</span></span>
+<span><span class="co">##   [8]     chr1 2672330-2692309      *</span></span>
+<span><span class="co">##   [9]     chr1 2747255-5000001      *</span></span>
+<span><span class="co">##   -------</span></span>
+<span><span class="co">##   seqinfo: 1 sequence from an unspecified genome</span></span></code></pre>
 </div>
-<div id="step3-validate-the-calling-and-export-peaks" class="section level3">
-<h3 class="hasAnchor">
-<a href="#step3-validate-the-calling-and-export-peaks" class="anchor"></a>Step3: validate the calling and export peaks</h3>
+<div class="section level4">
+<h4 id="step3-validate-the-calling-and-export-peaks">Step3: validate the calling and export peaks<a class="anchor" aria-label="anchor" href="#step3-validate-the-calling-and-export-peaks"></a>
+</h4>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="fu"><a href="../reference/plotPeaks.html">plotPeaks</a></span><span class="op">(</span><span class="va">called</span>, seqname<span class="op">=</span><span class="st">"chr1"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/plotPeaks.html">plotPeaks</a></span><span class="op">(</span><span class="va">called</span>, seqname<span class="op">=</span><span class="st">"chr1"</span><span class="op">)</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="HMMtBroadPeak_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">rtracklayer</span><span class="op">)</span>
-<span class="fu">export</span><span class="op">(</span><span class="va">called</span><span class="op">$</span><span class="va">peaks</span>, <span class="st">"called.broad.peak.bed"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">rtracklayer</span><span class="op">)</span></span>
+<span><span class="fu">export</span><span class="op">(</span><span class="va">called</span><span class="op">$</span><span class="va">peaks</span>, <span class="st">"called.broad.peak.bed"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 </div>
-<div id="session-info" class="section level1">
-<h1 class="hasAnchor">
-<a href="#session-info" class="anchor"></a>Session Info</h1>
+<div class="section level2">
+<h2 id="session-info">Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
+</h2>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
-<pre><code>## R Under development (unstable) (2021-03-18 r80099)
-## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 20.04.2 LTS
-## 
-## Matrix products: default
-## BLAS/LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.8.so
-## 
-## locale:
-##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
-##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    
-##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=C             
-##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 
-##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
-## 
-## attached base packages:
-## [1] stats4    parallel  stats     graphics  grDevices utils     datasets 
-## [8] methods   base     
-## 
-## other attached packages:
-##  [1] ggplot2_3.3.3               rtracklayer_1.51.5         
-##  [3] HMMtBroadPeak_0.0.4         GenomicAlignments_1.27.2   
-##  [5] Rsamtools_2.7.1             Biostrings_2.59.2          
-##  [7] XVector_0.31.1              SummarizedExperiment_1.21.2
-##  [9] Biobase_2.51.0              MatrixGenerics_1.3.1       
-## [11] matrixStats_0.58.0          GenomicRanges_1.43.4       
-## [13] GenomeInfoDb_1.27.8         IRanges_2.25.6             
-## [15] S4Vectors_0.29.12           BiocGenerics_0.37.1        
-## 
-## loaded via a namespace (and not attached):
-##  [1] lattice_0.20-41        rprojroot_2.0.2        digest_0.6.27         
-##  [4] utf8_1.2.1             R6_2.5.0               evaluate_0.14         
-##  [7] highr_0.8              pillar_1.5.1           zlibbioc_1.37.0       
-## [10] rlang_0.4.10           Matrix_1.3-2           rmarkdown_2.7         
-## [13] pkgdown_1.6.1          labeling_0.4.2         textshaping_0.3.3     
-## [16] desc_1.3.0             BiocParallel_1.25.5    stringr_1.4.0         
-## [19] RCurl_1.98-1.3         munsell_0.5.0          DelayedArray_0.17.10  
-## [22] compiler_4.1.0         xfun_0.22              pkgconfig_2.0.3       
-## [25] systemfonts_1.0.1      htmltools_0.5.1.1      tibble_3.1.0          
-## [28] GenomeInfoDbData_1.2.4 XML_3.99-0.6           fansi_0.4.2           
-## [31] withr_2.4.1            crayon_1.4.1           bitops_1.0-6          
-## [34] grid_4.1.0             gtable_0.3.0           lifecycle_1.0.0       
-## [37] magrittr_2.0.1         scales_1.1.1           HMMt_0.1              
-## [40] stringi_1.5.3          debugme_1.1.0          cachem_1.0.4          
-## [43] farver_2.1.0           fs_1.5.0               ellipsis_0.3.1        
-## [46] ragg_1.1.2             vctrs_0.3.7            rjson_0.2.20          
-## [49] restfulr_0.0.13        tools_4.1.0            glue_1.4.2            
-## [52] fastmap_1.1.0          yaml_2.2.1             colorspace_2.0-0      
-## [55] memoise_2.0.0          knitr_1.31             BiocIO_1.1.2</code></pre>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## R version 4.4.1 (2024-06-14)</span></span>
+<span><span class="co">## Platform: x86_64-pc-linux-gnu</span></span>
+<span><span class="co">## Running under: Ubuntu 22.04.4 LTS</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## Matrix products: default</span></span>
+<span><span class="co">## BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 </span></span>
+<span><span class="co">## LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## locale:</span></span>
+<span><span class="co">##  [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              </span></span>
+<span><span class="co">##  [3] LC_TIME=en_US.UTF-8        LC_COLLATE=en_US.UTF-8    </span></span>
+<span><span class="co">##  [5] LC_MONETARY=en_US.UTF-8    LC_MESSAGES=en_US.UTF-8   </span></span>
+<span><span class="co">##  [7] LC_PAPER=en_US.UTF-8       LC_NAME=C                 </span></span>
+<span><span class="co">##  [9] LC_ADDRESS=C               LC_TELEPHONE=C            </span></span>
+<span><span class="co">## [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## time zone: Etc/UTC</span></span>
+<span><span class="co">## tzcode source: system (glibc)</span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## attached base packages:</span></span>
+<span><span class="co">## [1] stats4    stats     graphics  grDevices utils     datasets  methods  </span></span>
+<span><span class="co">## [8] base     </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## other attached packages:</span></span>
+<span><span class="co">##  [1] ggplot2_3.5.1               rtracklayer_1.65.0         </span></span>
+<span><span class="co">##  [3] HMMtBroadPeak_0.0.5         GenomicAlignments_1.41.0   </span></span>
+<span><span class="co">##  [5] Rsamtools_2.21.0            Biostrings_2.73.1          </span></span>
+<span><span class="co">##  [7] XVector_0.45.0              SummarizedExperiment_1.35.1</span></span>
+<span><span class="co">##  [9] Biobase_2.65.0              MatrixGenerics_1.17.0      </span></span>
+<span><span class="co">## [11] matrixStats_1.3.0           GenomicRanges_1.57.1       </span></span>
+<span><span class="co">## [13] GenomeInfoDb_1.41.1         IRanges_2.39.1             </span></span>
+<span><span class="co">## [15] S4Vectors_0.43.1            BiocGenerics_0.51.0        </span></span>
+<span><span class="co">## </span></span>
+<span><span class="co">## loaded via a namespace (and not attached):</span></span>
+<span><span class="co">##  [1] gtable_0.3.5            rjson_0.2.21            xfun_0.45              </span></span>
+<span><span class="co">##  [4] bslib_0.7.0             htmlwidgets_1.6.4       lattice_0.22-6         </span></span>
+<span><span class="co">##  [7] vctrs_0.6.5             tools_4.4.1             bitops_1.0-7           </span></span>
+<span><span class="co">## [10] curl_5.2.1              parallel_4.4.1          tibble_3.2.1           </span></span>
+<span><span class="co">## [13] fansi_1.0.6             highr_0.11              pkgconfig_2.0.3        </span></span>
+<span><span class="co">## [16] Matrix_1.7-0            desc_1.4.3              lifecycle_1.0.4        </span></span>
+<span><span class="co">## [19] GenomeInfoDbData_1.2.12 farver_2.1.2            compiler_4.4.1         </span></span>
+<span><span class="co">## [22] textshaping_0.4.0       munsell_0.5.1           codetools_0.2-20       </span></span>
+<span><span class="co">## [25] htmltools_0.5.8.1       sass_0.4.9              RCurl_1.98-1.16        </span></span>
+<span><span class="co">## [28] yaml_2.3.9              pkgdown_2.1.0           pillar_1.9.0           </span></span>
+<span><span class="co">## [31] crayon_1.5.3            jquerylib_0.1.4         BiocParallel_1.39.0    </span></span>
+<span><span class="co">## [34] DelayedArray_0.31.7     cachem_1.1.0            abind_1.4-5            </span></span>
+<span><span class="co">## [37] HMMt_0.1                digest_0.6.36           restfulr_0.0.15        </span></span>
+<span><span class="co">## [40] labeling_0.4.3          fastmap_1.2.0           grid_4.4.1             </span></span>
+<span><span class="co">## [43] colorspace_2.1-0        cli_3.6.3               SparseArray_1.5.20     </span></span>
+<span><span class="co">## [46] magrittr_2.0.3          S4Arrays_1.5.4          XML_3.99-0.17          </span></span>
+<span><span class="co">## [49] utf8_1.2.4              withr_3.0.0             UCSC.utils_1.1.0       </span></span>
+<span><span class="co">## [52] scales_1.3.0            rmarkdown_2.27          httr_1.4.7             </span></span>
+<span><span class="co">## [55] ragg_1.3.2              evaluate_0.24.0         knitr_1.48             </span></span>
+<span><span class="co">## [58] BiocIO_1.15.0           rlang_1.1.4             glue_1.7.0             </span></span>
+<span><span class="co">## [61] jsonlite_1.8.8          R6_2.5.1                systemfonts_1.1.0      </span></span>
+<span><span class="co">## [64] fs_1.6.4                zlibbioc_1.51.1</span></span></code></pre>
 </div>
-<div id="references" class="section level1 unnumbered">
-<h1 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h1>
-<div id="refs" class="references csl-bib-body" line-spacing="2">
+<div class="section level2">
+<h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
+<div id="refs" class="references csl-bib-body" entry-spacing="0" line-spacing="2">
 <div id="ref-LEEMANS2019852" class="csl-entry">
 <div class="csl-left-margin">1. </div>
-<div class="csl-right-inline">Leemans, C. <em>et al.</em> Promoter-intrinsic and local chromatin features determine gene repression in LADs. <em>Cell</em> <strong>177,</strong> 852–864.e14 (2019).</div>
+<div class="csl-right-inline">Leemans, C. <em>et al.</em> <a href="https://doi.org/10.1016/j.cell.2019.03.009" class="external-link">Promoter-intrinsic and
+local chromatin features determine gene repression in LADs</a>.
+<em>Cell</em> <strong>177,</strong> 852–864.e14 (2019).</div>
 </div>
 </div>
 </div>
@@ -260,26 +230,28 @@ iteration: 53</code></pre>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by Jianhong Ou.</p>
+  <p></p>
+<p>Developed by Jianhong Ou.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
 </div>
 
       </footer>
 </div>
 
-  
+
+
+
 
 
   </body>
